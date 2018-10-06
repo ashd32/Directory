@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="container-fluid">
+    <div class="row-12">
+      <div class="col-12">
+        <h1>START</h1>
+        `Click <strong>VIEW</strong> to list all employee contact info in this directory.<br>`
+        <section id="add" class="hide">
+          `Click <strong>ADD</strong> to add a new employee to directory.<br>`
+        </section>
+        <section id="verify" class="hide">
+          `Click <strong>VERIFY</strong> to confirm newly added employee is included in employee directory.<br>`
+        </section>
+        <section id="update" class="hide">
+          `Click <strong>UPDATE</strong> to modify an employee's info in the directory.<br>`
+        </section>
+        <section id="delete" class="hide">
+          `Click <strong>DELETE</strong> to remove an employee from directory.<br>`
+        </section>
+      </div>
+
+      <div class="col-10">
+        <nav>
+          <menu>
+            <div row-12>
+              <div-col id="view">VIEW____</div-col>
+              <div-col id="add">ADD____</div-col>
+              <div-col id="verify">VERIFY_____</div-col>
+              <div-col id="update">UPDATE_____</div-col>
+              <div-col id="delete">DELETE</div-col>
+            </div>
+
+          </menu>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="col-md-10 content">
+          <form>
+            <div class="wrap">
+              <input id="name" placeholder="Employee Name" />
+              <div class="additional-data">
+                <input id="office" placeholder="Office Number" />
+                <input id="phone" placeholder="Phone Number" />
+              </div>
+              <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"
+                button id="submit">
+                Submit</button>
+              <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <div id="list"></div>
+        </div>
+      </div>
+    </div>
+    <script src="dom.js"></script>
+    <script src="employeeList.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
