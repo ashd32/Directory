@@ -1,54 +1,56 @@
+// Initial value of command variable set to empty string.
 let command = '';
-
+// Function to render directoryList on page.
 const print = function () {
   let htmlStr = '';
-  for (let i = 0; i < employeeList.length; i++) {
-    htmlStr += `<div class="entry"><p> ${employeeList[i].name}</p><p> ${employeeList[i].officeNum}</p><p> ${employeeList[i].phoneNum}</p></div>`;
+  for (let i = 0; i < directoryList.length; i++) {
+    htmlStr += `<div class="entry"><p> ${directoryList[i].name}</p><p> ${directoryList[i].emailAddress}</p><p> ${directoryList[i].phoneNum}</p></div>`;
   }
   render(htmlStr);
 }
-
+// Function to capture user's input on add and append to directoryList array.
 const add = function () {
   const userName = $('#name').val();
-  const officeNum = $('#office').val();
+  const emailAddress = $('#email').val();
   const phoneNum = $('#phone').val();
-  employeeList.push({
+  directoryList.push({
     name: userName,
-    officeNum: officeNum,
+    emailAddress: emailAddress,
     phoneNum: phoneNum
   })
   print();
 }
-
+// Search function
 const verify = function () {
   const userName = $('#name').val();
   let htmlStr = 'no';
-  for (let i = 0; i < employeeList.length; i++) {
-    if (employeeList[i].name === userName) {
+  for (let i = 0; i < directoryList.length; i++) {
+    if (directoryList[i].name === userName) {
       htmlStr = 'yes';
     }
   }
   render(htmlStr);
 }
-
+// Function to capture user's input on update.
 const update = function () {
+  // .val() converts input into a string
   const userName = $('#name').val();
-  const officeNum = $('#office').val();
+  const emailAddress = $('#email').val();
   const phoneNum = $('#phone').val();
-  for (let i = 0; i < employeeList.length; i++) {
-    if (employeeList[i].name === userName) {
-      employeeList[i].officeNum = officeNum;
-      employeeList[i].phoneNum = phoneNum;
+  for (let i = 0; i < directoryList.length; i++) {
+    if (directoryList[i].name === userName) {
+      directoryList[i].emailAddress = emailAddress;
+      directoryList[i].phoneNum = phoneNum;
     }
   }
   print();
 }
-
+// Remove function
 const remove = function () {
   const userName = $('#name').val();
-  for (let i = 0; i < employeeList.length; i++) {
-    if (employeeList[i].name === userName) {
-      employeeList.splice(i, 1);
+  for (let i = 0; i < directoryList.length; i++) {
+    if (directoryList[i].name === userName) {
+      directoryList.splice(i, 1);
     }
   }
   print();
@@ -56,7 +58,7 @@ const remove = function () {
 
 
 
-
+// Prevents page from refreshing on click, retains data while page is open.
 const runCommand = function (event) {
   console.log('add');
   event.preventDefault();
@@ -75,40 +77,40 @@ const runCommand = function (event) {
       break;
   }
 }
-
+// Toggles view.
 const setView = function () {
-  // $('#list').empty();
+  $('#list').empty();
   command = '';
   $('form').hide();
   print();
 }
-
+// Toggles view.
 const setAdd = function () {
   $('#list').empty();
   command = 'add';
   $('form').show();
-  $('.additional-data').show();
+  $('.extra-inputs').show();
 }
-
+// Toggles view.
 const setVerify = function () {
   $('#list').empty();
   command = 'verify';
   $('form').show();
-  $('.additional-data').hide();
+  $('.extra-inputs').hide();
 }
-
+// Toggles view.
 const setUpdate = function () {
   $('#list').empty();
   command = 'update';
   $('form').show();
-  $('.additional-data').show();
+  $('.extra-inputs').show();
 }
-
+// Toggles view.
 const setDelete = function () {
   $('#list').empty();
   command = 'delete';
   $('form').show();
-  $('.additional-data').hide();
+  $('.extra-inputs').hide();
 }
 
 
@@ -119,7 +121,6 @@ const render = function (htmlStr) {
 }
 
 $('#view').on('click', setView);
-
 $('#add').on('click', setAdd);
 $('#verify').on('click', setVerify);
 $('#update').on('click', setUpdate);
@@ -128,4 +129,3 @@ $('#delete').on('click', setDelete);
 $('#submit').on('click', runCommand);
 
 $('form').hide();
-

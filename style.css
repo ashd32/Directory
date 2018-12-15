@@ -1,11 +1,87 @@
-.col-2, .col-10 {
-      object-position: left;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  
-  nav {
-      font-size: 36px;
-      font-style: bold;
-  }
+body {
+  font-family: 'Walter Turncoat', cursive;
+  /* text color */
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  background: rgb(236, 236, 236);
+}
 
+.row{
+  min-height: 100vh;
+}
 
+nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(58, 206, 95);
+  color: rgb(68, 68, 68);
+  text-align: center;
+  text-transform: uppercase;
+  color: #fefffe;
+  padding: 80px 0;
+}
+
+nav li {
+  padding: 5px 0;
+}
+
+nav i {
+  display: block;
+  cursor: pointer;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+li:hover {
+  color: rgb(0, 0, 0);
+}
+
+form {
+  padding-top: 15px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+form input {
+  display: inline-block;
+  color: #333;
+  width: 300px;
+  padding: 0.5em 0.25em;
+  border: 2px solid rgb(58, 206, 95);;
+  border-radius: 0.2em;
+  font-size: 1em;
+}
+
+button{ 
+  padding: 0.5em;
+  border: 2px solid rgb(58, 206, 95);;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(249, 249, 249);
+}
+
+.extra-inputs{
+  display: inline;
+}
+
+.entry{
+ margin: 10px;
+ border: 3px solid rgb(58, 206, 95);;
+ padding: 10px;
+ width: 500px;
+ border-radius: 0.2em;
+}

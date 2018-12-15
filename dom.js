@@ -1,3 +1,4 @@
+// Alias for jQuery, entire document wrapped in object.
 const $ = function (selector) {
   const nodeList = document.querySelectorAll(selector);
 
@@ -24,7 +25,7 @@ const $ = function (selector) {
       nodeList[i].classList.remove(className);
     }
   }
-
+// Function to conditionally render parts of the page
   const toggleClass = function(className){
     for (let i = 0; i < nodeList.length; i++) {
       nodeList[i].classList.toggle(className);
@@ -74,7 +75,7 @@ const $ = function (selector) {
       nodeList[i].style.display = 'none';
     }
   }
-
+// Function to run all embeded functions in this object
   return {
     text: text,
     html: html,
